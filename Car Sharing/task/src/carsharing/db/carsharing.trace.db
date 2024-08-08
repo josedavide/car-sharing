@@ -1,0 +1,45 @@
+2024-08-07 14:17:57 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULLCOMPANY_ID[*] INT NOT NULL FOREIGN KEY REFERENCES COMPANY(ID))"; expected "NULL"; SQL statement:
+CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULLCOMPANY_ID INT NOT NULL FOREIGN KEY REFERENCES COMPANY(ID)) [42001-200]
+2024-08-07 14:17:57 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULLCOMPANY_ID[*] INT NOT NULL FOREIGN KEY REFERENCES COMPANY(ID))"; expected "NULL"; SQL statement:
+CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULLCOMPANY_ID INT NOT NULL FOREIGN KEY REFERENCES COMPANY(ID)) [42001-200]
+2024-08-07 14:20:58 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULL,COMPANY_ID INT NOT NULL FOREIGN[*] KEY REFERENCES COMPANY(ID))"; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULL,COMPANY_ID INT NOT NULL FOREIGN KEY REFERENCES COMPANY(ID)) [42001-200]
+2024-08-07 14:20:58 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULL,COMPANY_ID INT NOT NULL FOREIGN[*] KEY REFERENCES COMPANY(ID))"; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULL,COMPANY_ID INT NOT NULL FOREIGN KEY REFERENCES COMPANY(ID)) [42001-200]
+2024-08-07 14:21:17 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULL,COMPANY_ID INT NOT NULL FOREIGN[*] KEY REFERENCES COMPANY(ID))"; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULL,COMPANY_ID INT NOT NULL FOREIGN KEY REFERENCES COMPANY(ID)) [42001-200]
+2024-08-07 14:21:17 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULL,COMPANY_ID INT NOT NULL FOREIGN[*] KEY REFERENCES COMPANY(ID))"; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS CAR (ID INT PRIMARY KEY AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULL,COMPANY_ID INT NOT NULL FOREIGN KEY REFERENCES COMPANY(ID)) [42001-200]
+2024-08-08 14:56:17 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "company_id" not found [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3195)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3268)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:352)
+	at carsharing.car.CarDaoSQL.getAvailableCarsByCompanyId(CarDaoSQL.java:101)
+	at carsharing.CustomerController.chooseCarToRent(CustomerController.java:90)
+	at carsharing.CustomerController.rentCarWorkflow(CustomerController.java:70)
+	at carsharing.CustomerController.customerMenu(CustomerController.java:46)
+	at carsharing.CustomerController.chooseCustomer(CustomerController.java:27)
+	at carsharing.Main.main(Main.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.invokeMain(MainMethodExecutor.java:160)
+	at org.hyperskill.hstest.testing.execution.MainMethodExecutor.lambda$launch$1(MainMethodExecutor.java:188)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-08-08 14:58:27 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT C.ID, C.NAMEFROM CAR CJOIN[*] COMPANY CO ON C.COMPANY_ID = CO.IDLEFT JOIN CUSTOMER CU ON C.ID = CU.RENTED_CAR_IDWHERE CO.ID = ? AND CU.RENTED_CAR_ID IS NULL"; SQL statement:
+SELECT c.ID, c.NAMEFROM CAR cJOIN COMPANY co ON c.COMPANY_ID = co.IDLEFT JOIN CUSTOMER cu ON c.ID = cu.RENTED_CAR_IDWHERE co.ID = ? AND cu.RENTED_CAR_ID IS NULL [42000-200]
